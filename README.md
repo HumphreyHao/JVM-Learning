@@ -1,2 +1,3 @@
-# JVM-Learning
-some notes about learning JVM
+# 深入理解JAVA虚拟机
+一些关于JVM的个人读书笔记
+
