@@ -1,6 +1,6 @@
 # 深入理解java虚拟机
 	Java 内存区域与内存溢出异常
-## 1.1 运行时的数据区域
+##  1.1 运行时的数据区域
 ### 1.1.1程序计数器Program Counter Register
 改变程序计数器的值来选取下一条需要执行的指令的字节码
 
@@ -8,7 +8,7 @@
 
 此内存区域是唯一一个没有规定任何OutOfMemoryError情况的区域
 
-###1.1.2Java虚拟机栈Java Vitual Machine Stack
+### 1.1.2Java虚拟机栈Java Vitual Machine Stack
 虚拟机栈描述的是Java方法执行的内存模型：每个方法在执行的同时都会创建一个栈帧Stack Frame 用于存储局部变量表等
 
 64位长度的long 和 double 数据会占用两个局部变量空间Slot
@@ -20,10 +20,10 @@
 2，OutOfMemoryError 扩展时无法申请到足够的内存
 
 
-###1.1.3本地方法栈Native Method Stack
+### 1.1.3本地方法栈Native Method Stack
 类似于虚拟机栈
 
-###1.1.4 Java 堆Java Heap
+### 1.1.4 Java 堆Java Heap
 所有线程共享的一块内存区域，在虚拟机启动时创建，唯一目的就是存放对象实例，所有实例都要在这里分配内存
 
 也被称为GC堆（Garbage Collected Heap）
@@ -32,21 +32,21 @@
 
 逻辑上是连续的，物理上可以不连续
 
-###1.1.5 方法区Method Area
+### 1.1.5 方法区Method Area
 各个线程共享
 存储已经被虚拟机加载的类信息，常量，静态变量等
 
 也被称为永久代（Permanent Generation)
 主要是针对常量池的回收和对类型的卸载
 
-###1.1.6 运行时常量池Runtime Constant Pool
+### 1.1.6 运行时常量池Runtime Constant Pool
 存放运行时的各种常量
 
-###1.1.7 直接内存Direct Memory
+### 1.1.7 直接内存Direct Memory
 本机直接分配，经常被使用
 
-##1.2 HotSpot虚拟机对象
-###1.2.1 对象的创建
+## 1.2 HotSpot虚拟机对象
+### 1.2.1 对象的创建
 遇到一个new指令
 ->检查这个指令的参数是否已经在常量池中，检查这个类是否已经被加载和解析，如果没有就先执行类的加载和解
 ->为新生对象分配内存（指针碰撞Bump the Pointer or空闲列表 Free List
@@ -56,7 +56,7 @@
 ->将分配的内存空间都初始化为0值（不包括对象头）
 ->对对象进行必要的设置，存放在对象头中（Object Header）
 
-###1.2.2 对象的内存布局
+### 1.2.2 对象的内存布局
 可以分为3个区域 ：
 **对象头（header）：**
 1，存储对象自身运行时的数据（Mark Word）
